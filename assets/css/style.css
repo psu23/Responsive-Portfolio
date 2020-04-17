@@ -4,6 +4,7 @@ body {
     line-height: 34px;
     color: #777777;
     background: url("../images/dot-grid.png");
+    margin: 0;
   }
   
   * {
@@ -56,13 +57,20 @@ body {
     position: fixed;
     z-index: 99;
     width: 100%;
-    margin: 0 0 30px;
+    /* margin: 0 0 30px; */
     overflow: auto;
     color: #ffffff;
     background: #ffffff;
     border-bottom: 2px solid #cccccc;
+    margin-left: auto;
+    margin-right: auto;
   }
   
+  @keyframes example {
+    from {background-color: #ffffff;}
+    to {background-color: #4aaaa5;}
+  }
+
   #logo {
     float: left;
     width: 350px;
@@ -75,6 +83,8 @@ body {
     text-align: center;
     text-decoration: none;
     background: #4aaaa5;
+    animation-name: example;
+    animation-duration: 4s;
   }
   
   nav {
@@ -139,17 +149,17 @@ body {
   .work {
     position: relative;
     float: left;
-    width: 274px;
+    width: 300px;
     margin: 20px 0 25px;
     overflow: auto;
   }
   
   .work:nth-child(even) {
-    margin-right: 40px;
+    margin-right: 20px; /*this used to be 40px */
   }
   
   .work img {
-    width: 100%;
+    width: 100%; 
     border: 0 none;
     opacity: 0.8;
   }
@@ -157,7 +167,7 @@ body {
   .work h3 {
     position: absolute;
     bottom: 20px;
-    width: 100%;
+    width: 100%; 
     padding: 15px;
     margin-bottom: 0;
     font-weight: 300;
@@ -216,3 +226,103 @@ body {
     border: 0 none;
   }
   
+  @media screen and (max-width: 980px) {
+
+    #main-container {
+        max-width: 580px;
+        margin-left: 50px;
+      }
+
+    #masthead {
+        max-width: 980px;
+      }
+    
+    #logo {
+        margin-left: 50px;
+        float: left;
+        /* width: 350px;
+        height: 90px; */
+      }
+
+    nav {
+        /* float: right;
+        margin-top: 25px; */
+        margin-right: 20px;
+      }
+
+
+    .work {
+      margin: 0;
+      max-width: 250px;
+    }
+
+    .work:nth-child(even) {
+      margin-right: 10px;
+    }
+
+    .work img, .work h3 {
+      max-width: 250px;
+    }
+
+
+  }
+
+  @media screen and (max-width: 768px) {
+      #main-container {
+        max-width: 650px;
+      }
+}
+
+@media screen and (max-width: 640px) {
+      #masthead {
+          position: static;
+          max-width: 630;
+      }
+
+      #logo {
+        clear: both;
+        width: 100%;
+        margin-left: 0;
+        
+
+      }
+
+      nav {
+          align: center;
+          margin-right: 170px;
+
+      }
+
+      #main-container {
+          max-width: 590px;
+          margin: 0;
+          padding-top: 10px;
+          padding-left: 20px;
+          padding-right: 20px;
+      }
+
+      .auth-image {
+        clear: both;
+        width: 100%;
+      }
+
+      .work {
+        margin: 0;
+        width: 450px;
+        max-width: 450px;
+        position: relative;
+        left: 35px;
+      }
+  
+      /* .work:nth-child(even) {
+        margin-right: 10px;
+      } */
+  
+      .work img, .work h3 {
+        max-width: 350px;
+      }
+
+}
+
+
+
